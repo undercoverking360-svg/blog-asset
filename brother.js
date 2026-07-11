@@ -3443,7 +3443,465 @@ This typically indicates that your device does not have a healthy Internet conne
           letter-spacing: 3px;
           font-family: 'Rajdhani', sans-serif;
           opacity: 0.7;
-        }
-      `}),A.jsx("div",{className:"bg-image-layer",children:A.jsx("video",{ref:M,autoPlay:!0,loop:!0,muted:!0,playsInline:!0,style:{position:"absolute",top:"50%",left:"50%",minWidth:"100%",minHeight:"100%",width:"auto",height:"auto",transform:"translate(-50%,-50%)",objectFit:"cover",zIndex:-1},children:A.jsx("source",{src:"https://res.cloudinary.com/dhwgwq4nx/video/upload/v1783777422/ritik_money_plant_cru4pb.mp4",type:"video/mp4"})})}),A.jsx("div",{className:"vignette-overlay"}),A.jsx("div",{className:"scanlines"}),A.jsx("canvas",{ref:b,id:"matrixCanvas"}),A.jsx("canvas",{ref:w,id:"nebulaCanvas"}),A.jsx("canvas",{ref:R,id:"ambientCanvas"}),A.jsxs("div",{ref:k,className:`glass-card ${c?"success":""} ${h?"denied":""}`,children:[A.jsx("div",{className:"hologram-ring"}),A.jsx("div",{className:"hologram-ring ring-2"}),A.jsx("div",{className:"card-light-sweep"}),A.jsxs("div",{className:"cloud-icon-box",children:[A.jsx("div",{className:"icon-glow"}),A.jsx("svg",{className:"vault-icon",viewBox:"0 0 24 24",children:A.jsx("path",{d:"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"})})]}),A.jsx("div",{className:"dbms-ritesh","data-text":"DBMS RITESH",children:"DBMS RITESH"}),A.jsx("div",{className:"heartbeat",children:A.jsx("svg",{viewBox:"0 0 500 100",children:A.jsx("path",{className:"heartbeat-path",d:"M0 50 L80 50 L100 20 L130 80 L160 50 L500 50"})})}),A.jsx("h2",{id:"title",className:`${c?"granted":""}`,children:c?"ACCESS GRANTED":"SYSTEM ACCESS REQUIRED"}),A.jsxs("div",{className:`waveform-container ${e?"active":""}`,children:[A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"})]}),A.jsxs("button",{id:"micBtn",className:`${e?"listening":""}`,onClick:_,disabled:o>=3,children:[A.jsx("span",{className:"btn-text",children:"🎙 VOICE UNLOCK"}),A.jsx("div",{className:"btn-glow-trail"})]}),A.jsx("div",{id:"status",className:e?"typing":"",children:X}),A.jsxs("div",{id:"attempts",children:["Attempts: ",o,"/3"]}),A.jsx("div",{id:"fingerprint",children:"SYS-ID: AAR-500-KOI"})]})]})};function xX(){const[t,e]=j.useState(()=>localStorage.getItem("ritesh_unlocked_stage1")==="true"),[n,r]=j.useState(()=>sessionStorage.getItem("ritesh_unlocked_stage2")==="true"),[i,o]=j.useState(()=>sessionStorage.getItem("ritesh_unlocked_stage3")==="true"),[l,c]=j.useState(()=>{const w=localStorage.getItem("ritesh_premium_theme");return w||"red"}),[f,h]=j.useState(()=>{const w=localStorage.getItem("ritesh_premium_theme_mode");return w==="dark"||w==="light"?w:"dark"}),g=()=>{e(!1),r(!1),o(!1),localStorage.removeItem("ritesh_unlocked_stage1"),sessionStorage.removeItem("ritesh_unlocked_stage2"),sessionStorage.removeItem("ritesh_unlocked_stage3")},y=w=>{c(w),localStorage.setItem("ritesh_premium_theme",w)},S=()=>{const w=f==="dark"?"light":"dark";h(w),localStorage.setItem("ritesh_premium_theme_mode",w)};j.useEffect(()=>{const w=R=>{const k=R,{action:M,payload:G}=k.detail||{};M==="lock"?g():M==="set-theme"?y(G):M==="toggle-theme-mode"&&(G==="dark"||G==="light")&&(h(G),localStorage.setItem("ritesh_premium_theme_mode",G))};return window.addEventListener("aegis-app-command",w),()=>window.removeEventListener("aegis-app-command",w)},[l,f]);const b=f==="light";return A.jsxs("div",{className:`relative min-h-screen transition-colors duration-500 overflow-x-hidden font-mono selection:bg-slate-300 selection:text-slate-900 ${b?"bg-slate-50 text-slate-800":"bg-[#050b14] text-slate-100"}`,children:[  A.jsx(kS,{themeColor:l,themeMode:f,intensity:b?.22:.48}),A.jsx("div",{className:`fixed inset-0 pointer-events-none z-[5] transition-opacity duration-500 bg-[radial-gradient(rgba(18,24,38,0)_60%,rgba(0,0,0,0.5)_100%)] ${b?"opacity-20":"opacity-85"}`}),A.jsx(DF,{themeColor:l,themeMode:f,onToggleThemeMode:S,onChangeTheme:y,onLock:g})]})}EC.createRoot(document.getElementById("root")).render(A.jsx(j.StrictMode,{children:A.jsx(xX,{})}));
+																																															        }
+																																															      `}),A.jsx("div",{className:"bg-image-layer",children:A.jsx("video",{ref:M,autoPlay:!0,loop:!0,muted:!0,playsInline:!0,style:{position:"absolute",top:"50%",left:"50%",minWidth:"100%",minHeight:"100%",width:"auto",height:"auto",transform:"translate(-50%,-50%)",objectFit:"cover",zIndex:-1},children:A.jsx("source",{src:"https://res.cloudinary.com/dhwgwq4nx/video/upload/v1783777422/ritik_money_plant_cru4pb.mp4",type:"video/mp4"})})}),A.jsx("div",{className:"vignette-overlay"}),A.jsx("div",{className:"scanlines"}),A.jsx("canvas",{ref:b,id:"matrixCanvas"}),A.jsx("canvas",{ref:w,id:"nebulaCanvas"}),A.jsx("canvas",{ref:R,id:"ambientCanvas"}),A.jsxs("div",{ref:k,className:`glass-card ${c?"success":""} ${h?"denied":""}`,children:[A.jsx("div",{className:"hologram-ring"}),A.jsx("div",{className:"hologram-ring ring-2"}),A.jsx("div",{className:"card-light-sweep"}),A.jsxs("div",{className:"cloud-icon-box",children:[A.jsx("div",{className:"icon-glow"}),A.jsx("svg",{className:"vault-icon",viewBox:"0 0 24 24",children:A.jsx("path",{d:"M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"})})]}),A.jsx("div",{className:"dbms-ritesh","data-text":"DBMS RITESH",children:"DBMS RITESH"}),A.jsx("div",{className:"heartbeat",children:A.jsx("svg",{viewBox:"0 0 500 100",children:A.jsx("path",{className:"heartbeat-path",d:"M0 50 L80 50 L100 20 L130 80 L160 50 L500 50"})})}),A.jsx("h2",{id:"title",className:`${c?"granted":""}`,children:c?"ACCESS GRANTED":"SYSTEM ACCESS REQUIRED"}),A.jsxs("div",{className:`waveform-container ${e?"active":""}`,children:[A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"}),A.jsx("div",{className:"wave-bar"})]}),A.jsxs("button",{id:"micBtn",className:`${e?"listening":""}`,onClick:_,disabled:o>=3,children:[A.jsx("span",{className:"btn-text",children:"🎙 VOICE UNLOCK"}),A.jsx("div",{className:"btn-glow-trail"})]}),A.jsx("div",{id:"status",className:e?"typing":"",children:X}),A.jsxs("div",{id:"attempts",children:["Attempts: ",o,"/3"]}),A.jsx("div",{id:"fingerprint",children:"SYS-ID: AAR-500-KOI"})]})]})};function xX(){const[t,e]=j.useState(()=>localStorage.getItem("ritesh_unlocked_stage1")==="true"),[n,r]=j.useState(()=>sessionStorage.getItem("ritesh_unlocked_stage2")==="true"),[i,o]=j.useState(()=>sessionStorage.getItem("ritesh_unlocked_stage3")==="true"),[l,c]=j.useState(()=>{const w=localStorage.getItem("ritesh_premium_theme");return w||"red"}),[f,h]=j.useState(()=>{const w=localStorage.getItem("ritesh_premium_theme_mode");return w==="dark"||w==="light"?w:"dark"}),g=()=>{e(!1),r(!1),o(!1),localStorage.removeItem("ritesh_unlocked_stage1"),sessionStorage.removeItem("ritesh_unlocked_stage2"),sessionStorage.removeItem("ritesh_unlocked_stage3")},y=w=>{c(w),localStorage.setItem("ritesh_premium_theme",w)},S=()=>{const w=f==="dark"?"light":"dark";h(w),localStorage.setItem("ritesh_premium_theme_mode",w)};j.useEffect(()=>{const w=R=>{const k=R,{action:M,payload:G}=k.detail||{};M==="lock"?g():M==="set-theme"?y(G):M==="toggle-theme-mode"&&(G==="dark"||G==="light")&&(h(G),localStorage.setItem("ritesh_premium_theme_mode",G))};return window.addEventListener("aegis-app-command",w),()=>window.removeEventListener("aegis-app-command",w)},[l,f]);const b=f==="light";return A.jsxs("div",{className:`relative min-h-screen transition-colors duration-500 overflow-x-hidden font-mono selection:bg-slate-300 selection:text-slate-900 ${b?"bg-slate-50 text-slate-800":"bg-[#050b14] text-slate-100"}`,children:[  A.jsx(kS,{themeColor:l,themeMode:f,intensity:b?.22:.48}),A.jsx("div",{className:`fixed inset-0 pointer-events-none z-[5] transition-opacity duration-500 bg-[radial-gradient(rgba(18,24,38,0)_60%,rgba(0,0,0,0.5)_100%)] ${b?"opacity-20":"opacity-85"}`}),A.jsx(DF,{themeColor:l,themeMode:f,onToggleThemeMode:S,onChangeTheme:y,onLock:g})]})}EC.createRoot(document.getElementById("root")).render(A.jsx(j.StrictMode,{children:A.jsx(xX,{})}));
 
   
+(function(){
+const ROOT_ID="root";
+const PAGES=[
+  {id:"dict", name:"Dict", label:"Page -1 - Dict"},
+  {id:"finance", name:"Finance", label:"Page -2 - Finance"},
+  {id:"entertainment", name:"Entertainment", label:"Page -3 - Entertainment"},
+  {id:"cloud", name:"Cloud", label:"Page -4 - Cloud"},
+  {id:"planner", name:"Planner", label:"Page -5 - Planner"},
+  {id:"skill", name:"Skill", label:"Page -6 - Skill"},
+  {id:"research", name:"Research", label:"Page -7 - Research"},
+  {id:"p2p", name:"P2P", label:"Page -8 - P2P"},
+  {id:"diary", name:"Diary", label:"Page -9 - Diary"},
+  {id:"devotion", name:"Devotion", label:"Page -10 - Devotion"},
+];
+
+const STORAGE_KEY="ritik_fresh_editor_v3";
+
+function h(tag, cls, html){
+  const e=document.createElement(tag);
+  if(cls) e.className=cls;
+  if(html!==undefined) e.innerHTML=html;
+  return e;
+}
+
+function loadState(){
+  try{ const s=localStorage.getItem(STORAGE_KEY); return s?JSON.parse(s):{} }catch{ return {} }
+}
+function saveState(state){
+  try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }catch{}
+}
+
+let state = loadState();
+state.pages = state.pages || {};
+state.xmlTemplate = state.xmlTemplate || `<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html b:version='2' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b'>
+<head>
+  <meta charset='utf-8'/>
+  <title>RITIK GURU - Custom Template</title>
+  <b:skin><![CDATA[
+    /* Injected by production builder */
+    :root{ --video-src: "{{VIDEO_SRC}}"; --profile-image: "{{PROFILE_IMAGE}}"; }
+  ]]></b:skin>
+</head>
+<body>
+  <!-- Page Config Injected -->
+  <!--
+    Dict: {{PAGE_DICT_WEB_APP}} | {{PAGE_DICT_SHEET_EMBED}} | {{PAGE_DICT_SHUT}}
+    Finance: {{PAGE_FINANCE_WEB_APP}} | {{PAGE_FINANCE_SHEET_EMBED}}
+    Entertainment: {{PAGE_ENTERTAINMENT_WEB_APP}}
+    Cloud: {{PAGE_CLOUD_WEB_APP}}
+    Planner: {{PAGE_PLANNER_WEB_APP}}
+    Skill: {{PAGE_SKILL_WEB_APP}}
+    Research: {{PAGE_RESEARCH_WEB_APP}}
+    P2P: {{PAGE_P2P_WEB_APP}}
+    Diary: {{PAGE_DIARY_WEB_APP}}
+    Devotion: {{PAGE_DEVOTION_WEB_APP}}
+    Video: {{VIDEO_SRC}}
+    Profile: {{PROFILE_IMAGE}}
+  -->
+  <div id='root'></div>
+  <script src='app.bundle.js'></script>
+</body>
+</html>`;
+  state.jsTemplate = state.jsTemplate || `// RITIK GURU - Fresh JS Config - Production Ready
+// This file will be generated from Editor inputs
+// No external API, no Firebase, pure blank structure
+
+const APP_CONFIG = {
+  videoSrc: "{{VIDEO_SRC}}",
+  profileImage: "{{PROFILE_IMAGE}}",
+  pages: {
+    dict: {
+      webApp: "{{PAGE_DICT_WEB_APP}}",
+      sheetEmbed: "{{PAGE_DICT_SHEET_EMBED}}",
+      shutApp: "{{PAGE_DICT_SHUT}}"
+    },
+    finance: {
+      webApp: "{{PAGE_FINANCE_WEB_APP}}",
+      sheetEmbed: "{{PAGE_FINANCE_SHEET_EMBED}}",
+      shutApp: "{{PAGE_FINANCE_SHUT}}"
+    },
+    entertainment: {
+      webApp: "{{PAGE_ENTERTAINMENT_WEB_APP}}",
+      sheetEmbed: "{{PAGE_ENTERTAINMENT_SHEET_EMBED}}",
+      shutApp: "{{PAGE_ENTERTAINMENT_SHUT}}"
+    },
+    cloud: {
+      webApp: "{{PAGE_CLOUD_WEB_APP}}",
+      sheetEmbed: "{{PAGE_CLOUD_SHEET_EMBED}}",
+      shutApp: "{{PAGE_CLOUD_SHUT}}"
+    },
+    planner: {
+      webApp: "{{PAGE_PLANNER_WEB_APP}}",
+      sheetEmbed: "{{PAGE_PLANNER_SHEET_EMBED}}",
+      shutApp: "{{PAGE_PLANNER_SHUT}}"
+    },
+    skill: {
+      webApp: "{{PAGE_SKILL_WEB_APP}}",
+      sheetEmbed: "{{PAGE_SKILL_SHEET_EMBED}}",
+      shutApp: "{{PAGE_SKILL_SHUT}}"
+    },
+    research: {
+      webApp: "{{PAGE_RESEARCH_WEB_APP}}",
+      sheetEmbed: "{{PAGE_RESEARCH_SHEET_EMBED}}",
+      shutApp: "{{PAGE_RESEARCH_SHUT}}"
+    },
+    p2p: {
+      webApp: "{{PAGE_P2P_WEB_APP}}",
+      sheetEmbed: "{{PAGE_P2P_SHEET_EMBED}}",
+      shutApp: "{{PAGE_P2P_SHUT}}"
+    },
+    diary: {
+      webApp: "{{PAGE_DIARY_WEB_APP}}",
+      sheetEmbed: "{{PAGE_DIARY_SHEET_EMBED}}",
+      shutApp: "{{PAGE_DIARY_SHUT}}"
+    },
+    devotion: {
+      webApp: "{{PAGE_DEVOTION_WEB_APP}}",
+      sheetEmbed: "{{PAGE_DEVOTION_SHEET_EMBED}}",
+      shutApp: "{{PAGE_DEVOTION_SHUT}}"
+    }
+  }
+};
+
+export default APP_CONFIG;
+`;
+  state.videoSrc = state.videoSrc || "";
+  state.profileImage = state.profileImage || "";
+}
+
+function mount(){
+  const root=document.getElementById(ROOT_ID);
+  if(!root) return setTimeout(mount,80);
+  root.innerHTML="";
+  const style=h("style");
+  style.textContent=`
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Space+Grotesk:wght@500;700&display=swap');
+    *{box-sizing:border-box}
+    body{margin:0;background:#070a12;color:#cbd5e1;font-family:'JetBrains Mono',monospace}
+    .bg{position:fixed;inset:0;z-index:-1;background:
+      radial-gradient(1200px 600px at 20% -10%, rgba(34,197,94,0.12), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(56,189,248,0.10), transparent 60%),
+      #05070d}
+    .gridline{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);background-size:28px 28px;mask-image:radial-gradient(ellipse at center, black 60%, transparent 100%);pointer-events:none}
+    .wrap{max-width:1440px;margin:0 auto;padding:18px 14px 40px}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border:1px solid rgba(148,163,184,0.12);background:rgba(12,16,28,0.85);backdrop-filter:blur(12px);border-radius:14px}
+    .topbar h1{margin:0;font-family:'Space Grotesk',sans-serif;font-size:15px;letter-spacing:0.16em;color:#f1f5f9}
+    .topbar p{margin:2px 0 0;font-size:10px;letter-spacing:0.18em;color:#22c55e}
+    .badge{font-size:10px;padding:5px 9px;border-radius:999px;border:1px solid rgba(34,197,94,0.22);background:rgba(34,197,94,0.08);color:#86efac}
+    .main{display:grid;grid-template-columns:1.15fr 0.85fr;gap:16px;margin-top:16px}
+    @media(max-width:1100px){.main{grid-template-columns:1fr}}
+    .panel{border:1px solid rgba(51,65,85,0.35);background:rgba(12,16,28,0.9);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:720px;box-shadow:0 20px 60px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.04)}
+    .panel-head{display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid rgba(30,41,59,0.9);background:rgba(8,12,22,0.9)}
+    .panel-title{font-size:11px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+    .dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 10px #22c55e}
+    .tabs{display:flex;gap:6px}
+    .tab{padding:6px 10px;border-radius:8px;border:1px solid rgba(51,65,85,0.4);background:rgba(15,23,42,0.6);color:#94a3b8;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer}
+    .tab.active{background:rgba(34,197,94,0.14);border-color:rgba(34,197,94,0.35);color:#bbf7d0}
+    .panel-body{flex:1;overflow:auto;display:flex;flex-direction:column}
+    .section{padding:12px}
+    .page-list{display:grid;grid-template-columns:1fr;gap:10px}
+    .page-card{border:1px solid rgba(51,65,85,0.35);background:rgba(2,6,23,0.6);border-radius:12px;padding:10px 10px 8px}
+    .page-card h4{margin:0 0 8px;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#e2e8f0;display:flex;align-items:center;justify-content:space-between}
+    .page-card h4 span{font-size:10px;color:#64748b}
+    .inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px}
+    @media(max-width:700px){.inputs{grid-template-columns:1fr}}
+    .field{display:flex;flex-direction:column;gap:4px}
+    .field label{font-size:9px;letter-spacing:0.12em;text-transform:uppercase;color:#64748b}
+    .field input{width:100%;background:#020617;border:1px solid rgba(51,65,85,0.55);color:#e2e8f0;border-radius:8px;padding:7px 9px;font-size:11px;outline:none}
+    .field input:focus{border-color:rgba(34,197,94,0.5);box-shadow:0 0 0 3px rgba(34,197,94,0.12)}
+    .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px}
+    .btn{appearance:none;border:1px solid rgba(34,197,94,0.28);background:linear-gradient(180deg, rgba(34,197,94,0.18), rgba(34,197,94,0.06));color:#bbf7d0;padding:7px 12px;border-radius:9px;font-size:10px;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer}
+    .btn:hover{filter:brightness(1.15)}
+    .btn-ghost{border-color:rgba(71,85,105,0.35);background:rgba(15,23,42,0.6);color:#94a3b8}
+    .btn-wide{width:100%;justify-content:center;display:flex;margin-top:12px;padding:10px 14px;font-size:11px}
+    .global-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px;padding:12px;border:1px dashed rgba(34,197,94,0.25);border-radius:12px;background:rgba(34,197,94,0.04)}
+    @media(max-width:700px){.global-grid{grid-template-columns:1fr}}
+    textarea.code{width:100%;min-height:520px;background:#020617;color:#cbd5e1;border:1px solid rgba(30,41,59,0.7);border-radius:12px;padding:12px;font-size:12.5px;line-height:1.6;font-family:'JetBrains Mono',monospace;outline:none;resize:vertical}
+    textarea.code:focus{border-color:rgba(34,197,94,0.45)}
+    .guide{font-size:12px;line-height:1.7;color:#94a3b8}
+    .guide h3{color:#e2e8f0;font-size:12px;letter-spacing:0.12em;text-transform:uppercase;margin:18px 0 8px}
+    .guide code{background:rgba(15,23,42,0.9);border:1px solid rgba(51,65,85,0.35);padding:1px 6px;border-radius:6px;font-size:11px;color:#86efac}
+    .output-stack{display:flex;flex-direction:column;gap:14px;padding:12px;flex:1;overflow:auto}
+    .out-card{border:1px solid rgba(51,65,85,0.35);background:rgba(2,6,23,0.7);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;min-height:300px}
+    .out-head{display:flex;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid rgba(30,41,59,0.7);background:rgba(8,12,22,0.9)}
+    .out-title{font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:#e2e8f0}
+    .out-body{flex:1;display:flex;flex-direction:column}
+    .out-text{flex:1;width:100%;min-height:260px;background:#020617;color:#cbd5e1;border:0;padding:10px 12px;font-size:11.5px;line-height:1.6;font-family:'JetBrains Mono',monospace;resize:vertical;outline:none}
+    .hint{font-size:10px;color:#64748b;letter-spacing:0.08em;padding:8px 12px;border-top:1px dashed rgba(51,65,85,0.35);background:rgba(2,6,23,0.5)}
+  `;
+  document.head.appendChild(style);
+
+  document.body.appendChild(h("div","bg"));
+  document.body.appendChild(h("div","gridline"));
+
+  const wrap=h("div","wrap");
+  const topbar=h("div","topbar");
+  topbar.innerHTML=`<div><h1>RITIK GURU • FRESH CLEAN BUILDER</h1><p>EDITOR → OUTPUT • NO API • NO FIREBASE • 100% BLANK STRUCTURE</p></div><div style="display:flex;gap:8px;align-items:center"><span class="badge">● 2 WINDOW</span><span class="badge" style="color:#94a3b8;border-color:rgba(148,163,184,0.18);background:rgba(148,163,184,0.08)">REPLACE LINK NODE COMPLETELY</span></div>`;
+  wrap.appendChild(topbar);
+
+  const main=h("div","main");
+
+  // EDITOR PANEL
+  const editorPanel=h("div","panel");
+  const eHead=h("div","panel-head");
+  eHead.innerHTML=`<div class="panel-title"><span class="dot"></span> EDITOR</div><div class="tabs"><button class="tab active" data-tab="modules">Modules</button><button class="tab" data-tab="xml">XML</button><button class="tab" data-tab="js">JS Script</button><button class="tab" data-tab="guide">Guide</button></div>`;
+  const eBody=h("div","panel-body");
+
+  const tabModules=h("div","section");
+  const tabXml=h("div","section"); tabXml.style.display="none";
+  const tabJs=h("div","section"); tabJs.style.display="none";
+  const tabGuide=h("div","section"); tabGuide.style.display="none";
+
+  // Modules content
+  let modulesHtml=`<div style="font-size:10px;color:#64748b;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:10px">Inside • Modular Pages (10) • Page 11 Video Src • Page 12 Profile Image</div><div class="page-list">`;
+  PAGES.forEach(p=>{
+    const vals = state.pages[p.id] || {webApp:"", sheetEmbed:"", shut:""};
+    modulesHtml+=`
+      <div class="page-card" data-page="${p.id}">
+        <h4>${p.label} <span>${p.name.toUpperCase()}</span></h4>
+        <div class="inputs">
+          <div class="field"><label>Web App URL</label><input data-field="webApp" data-page="${p.id}" placeholder="" value="${vals.webApp||""}"></div>
+          <div class="field"><label>Sheet Embed / API</label><input data-field="sheetEmbed" data-page="${p.id}" placeholder="" value="${vals.sheetEmbed||""}"></div>
+          <div class="field"><label>Shut App / OAuth / Extra</label><input data-field="shut" data-page="${p.id}" placeholder="shut app / oauth client" value="${vals.shut||""}"></div>
+        </div>
+        <div class="row">
+          <button class="btn btn-ghost" data-save="${p.id}">SAVE ${p.name.toUpperCase()}</button>
+          <span style="font-size:10px;color:#475569">Will inject as {{PAGE_${p.id.toUpperCase()}_WEB_APP}} etc.</span>
+        </div>
+      </div>`;
+  });
+  modulesHtml+=`</div>
+    <div class="global-grid">
+      <div class="field"><label>Page 11 → Video Src</label><input id="videoSrc" placeholder="" value="${state.videoSrc||""}"></div>
+      <div class="field"><label>Page 12 → Profile Image</label><input id="profileImage" placeholder="" value="${state.profileImage||""}"></div>
+    </div>
+    <button class="btn btn-wide" id="submitAll">SUBMIT → GENERATE FINAL OUTPUT (Sync All Pages)</button>
+    <div style="margin-top:10px;font-size:10px;color:#64748b;line-height:1.6">Note: {(xml) data element will be injected by this theme and will be themed and will be production ready} • Download full customize form • Inject directly to html (code editor)</div>
+  `;
+  tabModules.innerHTML=modulesHtml;
+
+  // XML tab
+  tabXml.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div style="font-size:11px;font-weight:800;letter-spacing:0.12em">COMPLETE BLOGGER XML</div><button class="btn btn-ghost" data-act="saveXml">SAVE XML TEMPLATE</button></div><textarea class="code" id="xmlTemplate" spellcheck="false"></textarea><div class="hint">Use placeholders like {{VIDEO_SRC}}, {{PROFILE_IMAGE}}, {{PAGE_DICT_WEB_APP}}, {{PAGE_DICT_SHEET_EMBED}}, {{PAGE_DICT_SHUT}} ... they will be replaced on Submit</div>`;
+  
+  // JS tab
+  tabJs.innerHTML=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div style="font-size:11px;font-weight:800;letter-spacing:0.12em">JS SCRIPT</div><button class="btn btn-ghost" data-act="saveJs">SAVE JS TEMPLATE</button></div><textarea class="code" id="jsTemplate" spellcheck="false"></textarea><div class="hint">This JS template will receive all URLs via placeholder injection. Keep {{PLACEHOLDERS}} as in default.</div>`;
+
+  // Guide tab
+  tabGuide.innerHTML=`<div class="guide">
+    <h3>Structure (Image ke hisab se)</h3>
+    <p><b>Editor ke 3 Section:</b></p>
+    <p>1. <code>JS Script</code> - App logic, page config, web app URLs ka use yahan hota hai<br>
+       2. <code>XML</code> - Complete Blogger XML skeleton, jisme <code>&lt;b:skin&gt;</code>, <code>&lt;body&gt;</code>, data injection points hote hain<br>
+       3. <code>Blogger Script Guide</code> - Kaise XML me <code>{{PAGE_X_WEB_APP}}</code> inject hoga, kaise production build banega</p>
+    <h3>Pages (10 + 2 Global)</h3>
+    <p>Page 1 Dict → Page 10 Devotion tak har page ke 3 fields: <code>Web App URL</code>, <code>Sheet Embed</code>, <code>Shut / OAuth</code><br>
+       Page 11 → <code>Video Src</code> → <code>{{VIDEO_SRC}}</code><br>
+       Page 12 → <code>Profile Image</code> → <code>{{PROFILE_IMAGE}}</code></p>
+    <h3>Flow</h3>
+    <p>1. Modules tab me saare URLs dalo → SAVE per page (localStorage) → SUBMIT<br>
+       2. Output window me 2 blank structure automatically bhar jayega:<br>
+       &nbsp;&nbsp;• JS Modified Final Edition → <code>Download full customize JS file</code><br>
+       &nbsp;&nbsp;• Blogger XML Modified Final Edition → <code>Download full customize final XML</code><br>
+       3. Dono files production ready, direct Blogger me paste kar sakte ho.</p>
+    <h3>Placeholders List</h3>
+    <p>${PAGES.map(p=>`<code>{{PAGE_${p.id.toUpperCase()}_WEB_APP}}</code> <code>{{PAGE_${p.id.toUpperCase()}_SHEET_EMBED}}</code> <code>{{PAGE_${p.id.toUpperCase()}_SHUT}}</code>`).join("<br>")}<br><code>{{VIDEO_SRC}}</code> <code>{{PROFILE_IMAGE}}</code></p>
+  </div>`;
+
+  eBody.appendChild(tabModules);
+  eBody.appendChild(tabXml);
+  eBody.appendChild(tabJs);
+  eBody.appendChild(tabGuide);
+  editorPanel.appendChild(eHead);
+  editorPanel.appendChild(eBody);
+
+  // OUTPUT PANEL
+  const outPanel=h("div","panel");
+  const oHead=h("div","panel-head");
+  oHead.innerHTML=`<div class="panel-title"><span class="dot" style="background:#38bdf8;box-shadow:0 0 10px #38bdf8"></span> OUTPUT</div><div style="font-size:10px;color:#64748b;letter-spacing:0.12em">BLANK STRUCTURE → AFTER SUBMIT FILLED</div>`;
+  const oBody=h("div","panel-body");
+  const outStack=h("div","output-stack");
+  outStack.innerHTML=`
+    <div class="out-card">
+      <div class="out-head"><div class="out-title">Script JS → JS Modified Final Edition</div><div style="display:flex;gap:6px"><button class="btn btn-ghost" data-out="clearJs">CLEAR</button><button class="btn" data-out="downloadJs">Download full customize JS file</button></div></div>
+      <div class="out-body"><textarea class="out-text" id="outJs" placeholder="// After SUBMIT, full synced JS will appear here...&#10;// {{PAGE_DICT_WEB_APP}} etc. will be replaced with your URLs" spellcheck="false"></textarea><div class="hint">JS → Download full customize JS file (production ready, no API link blank structure filled after submit)</div></div>
+    </div>
+    <div class="out-card">
+      <div class="out-head"><div class="out-title">Blogger XML → XML Modified Final Edition</div><div style="display:flex;gap:6px"><button class="btn btn-ghost" data-out="clearXml">CLEAR</button><button class="btn" data-out="downloadXml">Download full customize final XML</button></div></div>
+      <div class="out-body"><textarea class="out-text" id="outXml" placeholder="<!-- After SUBMIT, full synced XML will appear here... -->&#10;<!-- {{VIDEO_SRC}}, {{PROFILE_IMAGE}}, {{PAGE_*}} will be replaced -->" spellcheck="false"></textarea><div class="hint">XML → Download full customize final XML (Inject directly to Blogger, production ready)</div></div>
+    </div>
+  `;
+  oBody.appendChild(outStack);
+  outPanel.appendChild(oHead);
+  outPanel.appendChild(oBody);
+
+  main.appendChild(editorPanel);
+  main.appendChild(outPanel);
+  wrap.appendChild(main);
+  root.appendChild(wrap);
+
+  // refs
+  const xmlTextarea = tabXml.querySelector("#xmlTemplate");
+  const jsTextarea = tabJs.querySelector("#jsTemplate");
+  xmlTextarea.value = state.xmlTemplate;
+  jsTextarea.value = state.jsTemplate;
+  const outJsEl = outStack.querySelector("#outJs");
+  const outXmlEl = outStack.querySelector("#outXml");
+  outJsEl.value = state.lastOutJs || "";
+  outXmlEl.value = state.lastOutXml || "";
+
+  // tab switching
+  eHead.querySelectorAll(".tab").forEach(t=>{
+    t.addEventListener("click",()=>{
+      eHead.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+      t.classList.add("active");
+      const tab=t.dataset.tab;
+      tabModules.style.display = tab==="modules" ? "" : "none";
+      tabXml.style.display = tab==="xml" ? "" : "none";
+      tabJs.style.display = tab==="js" ? "" : "none";
+      tabGuide.style.display = tab==="guide" ? "" : "none";
+    });
+  });
+
+  function collectInputs(){
+    const pagesData={};
+    PAGES.forEach(p=>{
+      const card = tabModules.querySelector(`[data-page="${p.id}"]`);
+      if(!card) return;
+      pagesData[p.id]={
+        webApp: card.querySelector(`[data-field="webApp"]`)?.value.trim() || "",
+        sheetEmbed: card.querySelector(`[data-field="sheetEmbed"]`)?.value.trim() || "",
+        shut: card.querySelector(`[data-field="shut"]`)?.value.trim() || ""
+      };
+    });
+    const videoSrc = document.getElementById("videoSrc")?.value.trim() || "";
+    const profileImage = document.getElementById("profileImage")?.value.trim() || "";
+    return {pagesData, videoSrc, profileImage};
+  }
+
+  function buildPlaceholderMap(pagesData, videoSrc, profileImage){
+    const map={};
+    map["{{VIDEO_SRC}}"]=videoSrc;
+    map["{{PROFILE_IMAGE}}"]=profileImage;
+    PAGES.forEach(p=>{
+      const d=pagesData[p.id]||{};
+      const U=p.id.toUpperCase();
+      map[`{{PAGE_${U}_WEB_APP}}`]=d.webApp||"";
+      map[`{{PAGE_${U}_SHEET_EMBED}}`]=d.sheetEmbed||"";
+      map[`{{PAGE_${U}_SHUT}}`]=d.shut||"";
+      // also support Page -1 style
+      const num = PAGES.indexOf(p)+1;
+      map[`{{PAGE_${num}_WEB_APP}}`]=d.webApp||"";
+      map[`{{PAGE_${num}_SHEET_EMBED}}`]=d.sheetEmbed||"";
+      map[`{{PAGE_${num}_SHUT}}`]=d.shut||"";
+    });
+    return map;
+  }
+
+  function inject(template, map){
+    let out=template;
+    Object.keys(map).forEach(k=>{
+      out=out.split(k).join(map[k]);
+    });
+    return out;
+  }
+
+  function handleSubmit(){
+    const {pagesData, videoSrc, profileImage}=collectInputs();
+    const xmlTpl = xmlTextarea.value;
+    const jsTpl = jsTextarea.value;
+    const map = buildPlaceholderMap(pagesData, videoSrc, profileImage);
+    const finalJs = inject(jsTpl, map);
+    const finalXml = inject(xmlTpl, map);
+    outJsEl.value = finalJs;
+    outXmlEl.value = finalXml;
+    // save state
+    state.pages=pagesData;
+    state.videoSrc=videoSrc;
+    state.profileImage=profileImage;
+    state.xmlTemplate=xmlTpl;
+    state.jsTemplate=jsTpl;
+    state.lastOutJs=finalJs;
+    state.lastOutXml=finalXml;
+    saveState(state);
+    // flash
+    outJsEl.style.border="1px solid rgba(34,197,94,0.5)";
+    outXmlEl.style.border="1px solid rgba(34,197,94,0.5)";
+    setTimeout(()=>{ outJsEl.style.border=""; outXmlEl.style.border=""; }, 900);
+  }
+
+  // save per page
+  tabModules.addEventListener("click", e=>{
+    const btn=e.target.closest("[data-save]");
+    if(btn){
+      const pid=btn.dataset.save;
+      const card=tabModules.querySelector(`[data-page="${pid}"]`);
+      const data={
+        webApp: card.querySelector(`[data-field="webApp"]`)?.value.trim() || "",
+        sheetEmbed: card.querySelector(`[data-field="sheetEmbed"]`)?.value.trim() || "",
+        shut: card.querySelector(`[data-field="shut"]`)?.value.trim() || ""
+      };
+      state.pages = state.pages || {};
+      state.pages[pid]=data;
+      saveState(state);
+      btn.textContent="✓ SAVED";
+      setTimeout(()=>btn.textContent=`SAVE ${pid.toUpperCase()}`,1200);
+    }
+  });
+
+  document.getElementById("submitAll")?.addEventListener("click", handleSubmit);
+
+  // save xml/js templates
+  tabXml.querySelector("[data-act='saveXml']")?.addEventListener("click", ()=>{
+    state.xmlTemplate = xmlTextarea.value;
+    saveState(state);
+    const b=tabXml.querySelector("[data-act='saveXml']"); b.textContent="✓ SAVED"; setTimeout(()=>b.textContent="SAVE XML TEMPLATE",1200);
+  });
+  tabJs.querySelector("[data-act='saveJs']")?.addEventListener("click", ()=>{
+    state.jsTemplate = jsTextarea.value;
+    saveState(state);
+    const b=tabJs.querySelector("[data-act='saveJs']"); b.textContent="✓ SAVED"; setTimeout(()=>b.textContent="SAVE JS TEMPLATE",1200);
+  });
+
+  // output actions
+  outStack.addEventListener("click", e=>{
+    const act=e.target.closest("[data-out]")?.dataset.out;
+    if(!act) return;
+    if(act==="clearJs") outJsEl.value="";
+    if(act==="clearXml") outXmlEl.value="";
+    if(act==="downloadJs"){
+      const blob=new Blob([outJsEl.value||"// empty"],{type:"text/javascript"});
+      const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="app.final.custom.js"; a.click();
+    }
+    if(act==="downloadXml"){
+      const blob=new Blob([outXmlEl.value||"<!-- empty -->"],{type:"text/xml"});
+      const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download="blogger.final.custom.xml"; a.click();
+    }
+  });
+
+  // live save inputs
+  tabModules.addEventListener("input", e=>{
+    if(e.target.matches("input")){
+      // debounce save
+      clearTimeout(window._saveT);
+      window._saveT=setTimeout(()=>{
+        const {pagesData, videoSrc, profileImage}=collectInputs();
+        state.pages=pagesData; state.videoSrc=videoSrc; state.profileImage=profileImage;
+        saveState(state);
+      },400);
+    }
+  });
+
+  console.log("RITIK FRESH CLEAN BUILDER v3 ready - no API, blank structure");
+}
+loadState();
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", mount); else mount();
+})();
