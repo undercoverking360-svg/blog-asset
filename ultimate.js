@@ -3462,4 +3462,193 @@ This typically indicates that your device does not have a healthy Internet conne
 
 EC.createRoot(document.getElementById("root")).render(A.jsx(j.StrictMode,{children:A.jsx(xX,{})}));
 
-  
+/* ============================================================
+   RITESH AUTO-SYNC ENGINE — Google Sheet Auto Push
+   - Manual Push/Pull buttons hide ho jaate hain
+   - Koi bhi change hone par auto sync hota hai
+   - Top mein "Syncing..." → "Synced ✓" status dikhta hai
+   ============================================================ */
+(function(){
+  'use strict';
+
+  // ── CONFIG ──────────────────────────────────────────────────
+  // Apps Script URL localStorage mein save hoti hai jab user configure kare
+  // Key: 'ritikSheetSyncUrl'
+  // ────────────────────────────────────────────────────────────
+
+  const SYNC_DEBOUNCE_MS = 1800; // itne ms baad sync fire hoga
+  const STATUS_HIDE_MS   = 3000; // "Synced ✓" kitne ms dikhe
+  const WATCHED_KEYS = ['secure_notes','ritik_links','links_data','notes_data',
+                        'secure_links','link_notes','all_notes','all_links'];
+
+  let syncTimer   = null;
+  let statusEl    = null;
+  let hideTimer   = null;
+  let lastSyncTs  = 0;
+
+  // ── STATUS BADGE (top-center) ────────────────────────────────
+  function createBadge(){
+    if(document.getElementById('__ritik_sync_badge')) return;
+    const el = document.createElement('div');
+    el.id = '__ritik_sync_badge';
+    el.style.cssText = [
+      'position:fixed','top:12px','left:50%','transform:translateX(-50%)',
+      'z-index:2147483646','padding:5px 16px','border-radius:999px',
+      'font-family:Inter,system-ui,sans-serif','font-size:12px','font-weight:600',
+      'letter-spacing:.04em','pointer-events:none','transition:opacity .35s,background .35s',
+      'opacity:0','backdrop-filter:blur(8px)','-webkit-backdrop-filter:blur(8px)',
+      'box-shadow:0 2px 16px rgba(0,0,0,.45)'
+    ].join(';');
+    document.body.appendChild(el);
+    statusEl = el;
+  }
+
+  function showStatus(state){ // 'syncing' | 'synced' | 'error'
+    if(!statusEl) createBadge();
+    clearTimeout(hideTimer);
+    statusEl.style.opacity = '1';
+    if(state === 'syncing'){
+      statusEl.textContent  = '⟳  Syncing...';
+      statusEl.style.background = 'rgba(30,64,175,.82)';
+      statusEl.style.color = '#93c5fd';
+      statusEl.style.border = '1px solid rgba(96,165,250,.4)';
+    } else if(state === 'synced'){
+      statusEl.textContent  = '✓  Synced';
+      statusEl.style.background = 'rgba(6,78,59,.82)';
+      statusEl.style.color = '#6ee7b7';
+      statusEl.style.border = '1px solid rgba(52,211,153,.4)';
+      hideTimer = setTimeout(()=>{ statusEl.style.opacity='0'; }, STATUS_HIDE_MS);
+    } else {
+      statusEl.textContent  = '✗  Sync Failed';
+      statusEl.style.background = 'rgba(127,29,29,.82)';
+      statusEl.style.color = '#fca5a5';
+      statusEl.style.border = '1px solid rgba(248,113,113,.4)';
+      hideTimer = setTimeout(()=>{ statusEl.style.opacity='0'; }, STATUS_HIDE_MS+1000);
+    }
+  }
+
+  // ── COLLECT ALL DATA ─────────────────────────────────────────
+  function collectPayload(){
+    const payload = { ts: Date.now(), notes:[], links:[] };
+    for(let i=0; i<localStorage.length; i++){
+      const k = localStorage.key(i);
+      if(!k) continue;
+      try{
+        const raw = localStorage.getItem(k);
+        const parsed = JSON.parse(raw);
+        if(k.toLowerCase().includes('note') && Array.isArray(parsed))
+          payload.notes = payload.notes.concat(parsed);
+        else if(k.toLowerCase().includes('link') && Array.isArray(parsed))
+          payload.links = payload.links.concat(parsed);
+      }catch(e){}
+    }
+    return payload;
+  }
+
+  // ── PUSH TO GOOGLE SHEET ──────────────────────────────────────
+  async function pushToSheet(){
+    const url = localStorage.getItem('ritikSheetSyncUrl') ||
+                localStorage.getItem('sheetSyncUrl') ||
+                localStorage.getItem('appsScriptUrl') ||
+                localStorage.getItem('syncUrl');
+    if(!url || !url.includes('script.google.com')) return; // URL nahi hai toh skip
+
+    showStatus('syncing');
+    try{
+      const payload = collectPayload();
+      const resp = await fetch(url, {
+        method : 'POST',
+        mode   : 'no-cors', // Apps Script needs no-cors
+        headers: { 'Content-Type': 'application/json' },
+        body   : JSON.stringify({ action:'push', data: payload })
+      });
+      lastSyncTs = Date.now();
+      showStatus('synced');
+    }catch(err){
+      console.warn('[AutoSync] Push failed:', err);
+      showStatus('error');
+    }
+  }
+
+  // ── DEBOUNCED TRIGGER ─────────────────────────────────────────
+  function schedulSync(){
+    clearTimeout(syncTimer);
+    syncTimer = setTimeout(pushToSheet, SYNC_DEBOUNCE_MS);
+  }
+
+  // ── WATCH localStorage CHANGES ────────────────────────────────
+  const _origSet = localStorage.setItem.bind(localStorage);
+  localStorage.setItem = function(key, value){
+    _origSet(key, value);
+    const kl = key ? key.toLowerCase() : '';
+    if(WATCHED_KEYS.some(w => kl.includes(w))) schedulSync();
+  };
+
+  const _origRemove = localStorage.removeItem.bind(localStorage);
+  localStorage.removeItem = function(key){
+    _origRemove(key);
+    const kl = key ? key.toLowerCase() : '';
+    if(WATCHED_KEYS.some(w => kl.includes(w))) schedulSync();
+  };
+
+  // ── ALSO CATCH CROSS-TAB STORAGE EVENTS ─────────────────────
+  window.addEventListener('storage', function(e){
+    if(!e.key) return;
+    const kl = e.key.toLowerCase();
+    if(WATCHED_KEYS.some(w => kl.includes(w))) schedulSync();
+  });
+
+  // ── HIDE MANUAL PUSH/PULL BUTTONS ────────────────────────────
+  // "Push to Sheet" aur "Pull from Sheet" buttons hide karo
+  function hidePushPullButtons(){
+    const style = document.createElement('style');
+    style.id = '__ritik_hide_manual_sync';
+    style.textContent = `
+      /* Manual Push/Pull buttons ko auto-sync se replace kiya — hide karo */
+      button:has(> span:only-child) {
+        /* check by text content via JS below */
+      }
+    `;
+    document.head.appendChild(style);
+
+    // DOM ready hone ke baad text-based hide
+    function hideByText(){
+      document.querySelectorAll('button, [role="button"]').forEach(btn => {
+        const t = (btn.textContent || '').trim().toLowerCase();
+        if(t.includes('push to sheet') || t.includes('pull from sheet') ||
+           t === 'push' || t === 'pull'){
+          btn.style.display = 'none';
+          btn.setAttribute('data-autosync-hidden','1');
+        }
+      });
+    }
+
+    // Observe DOM changes (React renders async)
+    const mo = new MutationObserver(hideByText);
+    mo.observe(document.body, { childList:true, subtree:true });
+    hideByText(); // initial run
+  }
+
+  // ── INIT ──────────────────────────────────────────────────────
+  function init(){
+    createBadge();
+    hidePushPullButtons();
+
+    // Page load pe ek baar sync karo (agar URL set hai)
+    const url = localStorage.getItem('ritikSheetSyncUrl') ||
+                localStorage.getItem('sheetSyncUrl');
+    if(url && url.includes('script.google.com')){
+      setTimeout(pushToSheet, 3000); // 3 sec baad page load pe sync
+    }
+
+    console.log('%c[Ritesh AutoSync] ✅ Engine Active', 'color:#6ee7b7;font-weight:bold;font-size:13px');
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+
+})();
+
